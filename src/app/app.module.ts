@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
+import { ServiceComponent } from './services/services.component';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
@@ -13,7 +14,8 @@ import { RouterModule } from '@angular/router';
     AppComponent,
     NavComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    ServiceComponent
   ],
   imports: [
     BrowserModule,
@@ -24,6 +26,7 @@ import { RouterModule } from '@angular/router';
       { path: '', component: HomeComponent },
       { path: 'home', component: HomeComponent },
       { path: 'about', component: AboutComponent },
+      { path: 'services', component: ServiceComponent },
       { path: '**', component: HomeComponent }
     ])
   ],

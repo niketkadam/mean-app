@@ -17,10 +17,11 @@ h1,
 h2 {
     text-transform: uppercase;
     font-weight: bold;
+    color:white;
 }
 
 .top-header {
-    background: #fff !important;
+    background:darkslateblue !important;
     position: fixed;
     width: 100%;
     z-index: 99999;
@@ -71,10 +72,11 @@ li a.active {
     margin-top: 4px;
 }
 .img{
- width: 150px;
+ width: 180px;
+ margin: 5px 0px 0px -5px;
 }
 .about h2 {
-    font-size: 90px;
+    font-size: 20px;
     color: #42b3e5;
     margin-top: 50px;
 }
@@ -162,13 +164,17 @@ li a.active {
     color: #3a9dca;
 }
 
+
+
+
 @media (min-width: 990px) and (max-width: 1199px) {
   .navbar-default .navbar-nav>li>a {
       font-size: 15px;
         padding: 14px 12px;
     }
-    .img{
- width: 120px;
+.img{
+ width: 170px;
+  margin: 5px 0px 0px -5px;
 }
 .navbar-default {
     margin:0px 0px 0px -125px;
@@ -182,9 +188,7 @@ li a.active {
     -o-transition: all .5s ease 0s;
     -ms-transition: all .5s ease 0s;
 }
-  h2 {
-        font-size: 75px !important;
-    }
+  
     h4 {
         font-size: 22px !important;
     }
@@ -196,11 +200,10 @@ li a.active {
         padding: 10px 8px;
     }
     .img{
- width: 120px;
+ width: 150px;
+  margin: 5px 0px 0px -5px;
 }
-  h2 {
-        font-size: 70px !important;
-    }
+  
     h4 {
         font-size: 18px !important;
     }
@@ -213,7 +216,8 @@ li a.active {
         padding: 10px 8px;
     }
     .img{
- width: 120px;
+ width: 140px;
+  margin: 5px 0px 0px -5px;
 }
 .navbar-default {
     margin:0px 0px 0px 0px;
@@ -227,9 +231,7 @@ li a.active {
     -o-transition: all .5s ease 0s;
     -ms-transition: all .5s ease 0s;
 }
-  h2 {
-        font-size: 70px !important;
-    }
+ 
     h4 {
         font-size: 21px !important;
     }
