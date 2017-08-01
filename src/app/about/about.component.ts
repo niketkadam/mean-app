@@ -34,7 +34,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 							<div class="pentagon-text">
 								<h1>W</h1>
 							</div>
-
 							<h3>Surgeon</h3>
 							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer.</p>
 						</div>

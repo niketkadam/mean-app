@@ -4,14 +4,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
+import {LoginComponent} from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ServiceComponent } from './services/services.component';
 import { RouterModule } from '@angular/router';
+import { DataService}from './app.service';
 
 @NgModule({
   declarations: [
     AppComponent,
+    LoginComponent,
     NavComponent,
     HomeComponent,
     AboutComponent,
@@ -23,14 +26,14 @@ import { RouterModule } from '@angular/router';
     HttpModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent },
+      { path: '', component: LoginComponent },
       { path: 'home', component: HomeComponent },
       { path: 'about', component: AboutComponent },
       { path: 'services', component: ServiceComponent },
       { path: '**', component: HomeComponent }
     ])
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
