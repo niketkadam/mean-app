@@ -12,17 +12,29 @@ export class DataService {
 
     getData(data) {
         console.log(data);
-        var body=JSON.parse(data);
+        var body = JSON.parse(data);
         const headers = new Headers();
-          return this.http.post('/api/add',body,{ headers: headers })
+        return this.http.post('/api/add', body, { headers: headers })
             .map(response => response.json())
             .catch(response => {
                 this.handleStatusErrors(response.status);
                 return response;
             });
-            
+
     }
-    handleStatusErrors(status){
-        
+    getLogin(email: string, password: string) {
+        const headers = new Headers();
+        const body="";
+        headers.append("Authorization", 'Basic ' + btoa(email + ":" + password));
+        headers.append("Content-Type", 'text/plain');
+        return this.http.post('/api/login',"", { headers: headers })
+            .map(response => response.json())
+            .catch(response => {
+                this.handleStatusErrors(response.status);
+                return response;
+            });
+    }
+    handleStatusErrors(status) {
+
     }
 }

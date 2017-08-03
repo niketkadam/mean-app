@@ -3,11 +3,15 @@ const express = require('express');
 const path = require('path');
 const http = require('http');
 const bodyParser = require('body-parser');
+var passport = require("passport");
+var passportJWT = require("passport-jwt");
+var LocalStrategy = require('passport-local').Strategy;
 
 const api = require('./server/routes/api');
 // const loginDatas = require('./server/models/users');
 
 const app = express();
+app.use(passport.initialize());
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

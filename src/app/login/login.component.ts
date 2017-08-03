@@ -1,41 +1,44 @@
 import { Component } from '@angular/core';
-import { User } from './user';
+ import { User } from 'user';
 import { NgForm } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
-import { DataService}from '../app.service';
+import { DataService } from '../app.service';
 
 @Component({
     selector: 'app-root',
     template: `
-  <form #signupForm="ngForm" (ngSubmit)="onSubmit(signupForm.value)">
-    <div class="form-group">
-        <label for="name">UserName</label>
-        <input type="text" class="form-control" id="username" required [(ngModel)]="model.username" name="username">
+  <form #signupForm="ngForm" (ngSubmit)="onSubmit()">
+     <div class="form-group">
+        <label for="name">Email</label>
+        <input type="text" class="form-control" id="password" required [(ngModel)]="email" name="email">
     </div>
     <div class="form-group">
         <label for="name">Password</label>
-        <input type="text" class="form-control" id="password" required [(ngModel)]="model.password" name="password">
+        <input type="text" class="form-control" id="password" required [(ngModel)]="password" name="password">
     </div>
+    <button type="submit">Login</button>
+    <span ><button type="button" (click)="onClick()">SignUp</button></span>
 
-    <button type="submit">Sign Up</button>
 </form>
   
   `,
-   
+
 })
 export class LoginComponent {
-    model = new User(null, null);
-    constructor(private router: Router,private app:DataService) {
-        localStorage.clear();
+    email:string='';
+    password:string='';
+    constructor(private router: Router, private app: DataService) {
     }
 
-    onSubmit(signupForm) {
-        var data= JSON.stringify({ username: this.model.username, password: this.model.password })
-        localStorage.setItem('model',data)
-       this.app.getData(data).subscribe(
-           (response)=>{console.log(response)}
-       )
-        // this.router.navigate(['/home']);
+    onSubmit(){
+        this.app.getLogin(this.email,this.password).subscribe(
+            (response) => { console.log(response) }
+        )
+
+    }
+
+    onClick(){
+        this.router.navigate(['/signup']);
     }
 
 }
